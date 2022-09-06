@@ -22,7 +22,6 @@ services:
       - SERVER_PORT
     volumes:
       - ./:/usr/app
-      - /usr/app/node_modules
     user: node
     working_dir: /usr/app
     command: bash
