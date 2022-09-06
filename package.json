@@ -2,9 +2,9 @@
   "name": "exercise-sequelize-associations",
   "version": "1.0.0",
   "description": "Esse é um projeto para o conteúdo de `React Testing Library`.",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
