@@ -1,7 +1,7 @@
-# Boas-vindas ao repositório do exercício do dia `24.2 - ORM - Associations`
+# Boas-vindas ao repositório do exercício do dia `24.3 - ORM - Associations N:N e Transactions`
 
 
-Esse é o exercício do conteúdo do dia `24.2 - ORM - Associations`. Esse exercício vai consolidar as seguintes habilidades:
+Esse é o exercício do conteúdo do dia `ORM - Associations N:N e Transactions`. Esse exercício vai consolidar as seguintes habilidades:
 
 * Criar modelos
 * Relacionar dois modelos com hasMany
@@ -17,8 +17,6 @@ Esse é o exercício do conteúdo do dia `24.2 - ORM - Associations`. Esse exerc
   Crie um fork desse projeto e para isso siga esse [tutorial de como realizar um fork](https://guides.github.com/activities/forking/).
 
   Após feito o fork, clone o repositório criado para o seu computador.
-
-  Rode o `npm install`.
 
   Vá para a branch master do seu projeto e execute o comando:
 
@@ -53,13 +51,18 @@ Nesse exercício vamos criar uma API que será responsável pela gestão de um s
 
 ![Diagrama](images/diagrama3.png)
 
-Este repositório já contém as dependências abaixo no `package.json`. Execute `npm install` para instalá-las.
+Este repositório já contém as dependências abaixo no `package.json`. 
 
 - express
 - nodemon
 - sequelize
 - mysql2
 - sequelize-cli
+
+Para começarmos, vamos fazer os seguintes passos:
+1. Subir o container: `docker-compose up -d`;
+2. Abrir o shell do container criado: `docker compose exec api bash`; e
+3. Instalar as dependências no container: `npm install`.
 
 O exercício já vem com a estrutura básica do Sequelize configurada, **não será necessário inicializar ou criar migrations ou seeders para as tabelas**, pois ela já estão feitas. 
 
