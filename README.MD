@@ -59,17 +59,17 @@ Este repositório já contém as dependências abaixo no `package.json`.
 - mysql2
 - sequelize-cli
 
-Para começarmos, vamos fazer os seguintes passos:
+Além disso, o exercício já vem com a estrutura básica do Sequelize configurada, **não será necessário inicializar ou criar migrations ou seeders para as tabelas**, pois ela já estão feitas.
+
+Será necessário configurar o arquivo `config/config.js` com os dados de seu servidor. Para isso, crie um arquivo .env para configurar suas variáveis de ambiente. O arquivo .env.example contém um exemplo das variáveis de ambiente que devem ser configuradas.
+
+Após definir o `.env`, vamos fazer os seguintes passos:
 
 1. Subir o container: `docker-compose up -d`;
 2. Abrir o terminal do container criado: `docker compose exec api bash`; e
 3. Instalar as dependências no container: `npm install`.
 
-O exercício já vem com a estrutura básica do Sequelize configurada, **não será necessário inicializar ou criar migrations ou seeders para as tabelas**, pois ela já estão feitas.
-
-Será necessário configurar o arquivo `config/config.js` com os dados de seu servidor. Para isso, crie um arquivo .env para configurar suas variáveis de ambiente. O arquivo .env.example contém um exemplo das variáveis de ambiente que devem ser configuradas
-
-Após, utilize os comandos abaixo:
+Após instalar as dependências, utilize os comandos abaixo:
 
 ```bash
 npx sequelize db:create
