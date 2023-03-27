@@ -1,4 +1,4 @@
-const patientsMiddleware = require('patients.middleware.js');
+const patientsMiddleware = require('./patients.middleware');
 
 module.exports = {
   patientsMiddleware,

@@ -10,8 +10,7 @@ patientsRouter.get('/plans/:id', patientsController.getPacientsJoinPlansById);
 
 patientsRouter.post('/',
   middlewares.patientsMiddleware.validatePatient,
-  patientsController.addNewPatient,
-);
+  patientsController.addNewPatient);
 
 module.exports = {
   patientsRouter,

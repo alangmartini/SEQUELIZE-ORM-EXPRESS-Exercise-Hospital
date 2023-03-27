@@ -29,11 +29,12 @@ const getPacientsJoinPlansById = async (req, res) => {
 const addNewPatient = async (req, res) => {
   const newPatient = req.body;
 
-  const addNewPatient = await 
+  // const addNewPatient = await
 
 };
 
 module.exports = {
   getAllPatients,
   getPacientsJoinPlansById,
+  addNewPatient,
 };
