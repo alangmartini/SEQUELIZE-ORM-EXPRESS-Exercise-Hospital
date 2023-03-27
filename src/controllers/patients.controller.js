@@ -26,6 +26,13 @@ const getPacientsJoinPlansById = async (req, res) => {
   return res.status(200).json(patientsWithId);
 };
 
+const addNewPatient = async (req, res) => {
+  const newPatient = req.body;
+
+  const addNewPatient = await 
+
+};
+
 module.exports = {
   getAllPatients,
   getPacientsJoinPlansById,

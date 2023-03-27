@@ -7,6 +7,11 @@ patientsRouter.get('/', patientsController.getAllPatients);
 
 patientsRouter.get('/plans/:id', patientsController.getPacientsJoinPlansById);
 
+patientsRouter.post('/',
+  patientsController.addNewPatient,
+  
+  );
+
 module.exports = {
   patientsRouter,
 };
