@@ -6,7 +6,7 @@ app.use(express.json());
 
 app.use('/patients', router.patientsRouter);
 app.use('/surgeries', router.surgeriesRouter);
+app.use('/login', router.loginRouter);
 // app.use('/plans', router.plansRouter);
-// app.use('/surgeries', router.surgeriesRouter);
 
 module.exports = app;
