@@ -8,6 +8,8 @@ patientsRouter.get('/', patientsController.getAllPatients);
 
 patientsRouter.get('/plans/:id', patientsController.getPacientsJoinPlansById);
 
+patientsRouter.get('/surgeries', patientsController.getPatientsJoinSurgeries);
+
 patientsRouter.post('/',
   middlewares.patientsMiddleware.validatePatient,
   patientsController.addNewPatient);

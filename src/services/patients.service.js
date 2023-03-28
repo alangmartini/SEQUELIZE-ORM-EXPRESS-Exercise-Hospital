@@ -1,32 +1,5 @@
 const Boom = require('@hapi/boom');
-const Sequelize = require('sequelize');
 const models = require('../models');
-
-const { Op } = Sequelize;
-
-const applyQuery = (arrayOfEntries) => {
-  const includeObject = {
-    plans: (idArr) => ({ 
-      model: models.Plan, 
-      as: 'Plans',
-      where: { plan_id: { [Op.in]: idArr } },
-    }),
-    surgeries: (id) => ({ 
-      model: models.Surgery, 
-      as: 'Surgeries',
-      through: { attributes: [] },
-      where: { id },
-    }),
-      
-    undefined: {},
-  };
-
-  return arrayOfEntries.reduce((acc, curr) => {
-    acc.include.push(includeObject[curr[0]](curr[1]));
-
-    return acc;
-  }, { include: [] });
-};
 
 const findAll = async () => {
   const allPatients = await models.Patient.findAll();
@@ -54,7 +27,39 @@ const findById = async (id) => {
   return patientsWithIds;
 };
 
+const findWithSurgeries = async () => {
+  const patientsWithSurgeries = await models.Patient.findAll({
+    include: {
+      model: models.Surgery,
+      as: 'Surgeries',
+      attributes: {
+        exclude: ['doctor'],
+      },
+      through: { attributes: [] },
+    },
+  });
+
+  return patientsWithSurgeries;
+};
+
+const createPatient = async (patient) => {
+  try {
+    const addedNewPatientResponse = await models.Patient.create(patient);
+
+    // Gimmick so lint wont complain of _previousValues
+    const keys = Object.keys(addedNewPatientResponse);
+    const addedNewPatient = addedNewPatientResponse[keys[1]];
+
+    return addedNewPatient;
+  } catch (error) {
+    const boomError = Boom.internal(error.message);
+    return boomError;
+  }
+};
+
 module.exports = {
   findAll,
   findById,
+  findWithSurgeries,
+  createPatient,
 };

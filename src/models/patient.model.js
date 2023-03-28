@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     fullname: {
       type: DataTypes.STRING,
     },
-    plan_id: {
+    planId: {
       type: DataTypes.INTEGER,
       foreignKey: true,   
     }
