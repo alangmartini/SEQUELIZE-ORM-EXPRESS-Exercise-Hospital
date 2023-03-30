@@ -1,5 +1,8 @@
+const jwt = require('jsonwebtoken');
 const Boom = require('@hapi/boom');
-const loginServices = require('../services');  
+const loginServices = require('../services');
+
+const secret = process.env.JWT_SECRET || 'segredodeteste';
 
 const enter = async (req, res) => {
   const loginInfo = req.body;
