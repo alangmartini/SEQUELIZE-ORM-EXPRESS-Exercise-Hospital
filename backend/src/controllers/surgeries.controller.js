@@ -13,6 +13,18 @@ const findSurgeriesByName = async (req, res) => {
   return res.status(200).json({ surgeriesByDoctor });
 };
 
+const findAllSurgeries = async (req, res) => {
+  const allSurgeries = await surgeriesService.findAll();
+
+  if (allSurgeries instanceof Error) {
+    return sendError(allSurgeries, res);
+  }
+
+  return res.status(200).json({ allSurgeries });
+};
+
+
 module.exports = {
   findSurgeriesByName,
+  findAllSurgeries,
 };

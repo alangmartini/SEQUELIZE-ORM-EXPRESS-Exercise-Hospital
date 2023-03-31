@@ -20,6 +20,7 @@
   "homepage": "https://github.com/tryber/exercise-sequelize-associations#readme",
   "dependencies": {
     "@hapi/boom": "^10.0.1",
+    "cors": "^2.8.5",
     "dotenv": "16.0.0",
     "express": "4.17.1",
     "gf-exp-msc": "^1.0.0",

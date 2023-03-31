@@ -19,6 +19,18 @@ const findByName = async (name) => {
   return surgeriesFromName;
 };
 
+const findAll = async () => {
+  try {
+    const allSurgeries = await models.Surgery.findAll();
+    return allSurgeries;
+  } catch (error) {
+    const boomError = Boom.badImplementation('Internal Server Error');
+    return boomError;
+  }
+};
+
+
 module.exports = {
   findByName,
+  findAll,
 };
